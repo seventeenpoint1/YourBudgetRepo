@@ -30,11 +30,11 @@ class Function
             file = new File(fileName);
             if(file.createNewFile())
             {
-                System.out.println("File created! Welcome to YourBudget!");
+                System.out.println(fileName + " created!");
             }
             else
             {
-                System.out.println("Config already made!");
+                System.out.println(fileName + " already made!");
             }
         }
         catch(IOException e)
