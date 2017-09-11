@@ -19,10 +19,15 @@ class Function
     File file;
     public Function()
     {
+        generateFile("configFile");
+    }
+
+    void generateFile(String fileName)
+    {
         try
         {
 
-            file = new File("configFile.txt");
+            file = new File(fileName);
             if(file.createNewFile())
             {
                 System.out.println("File created! Welcome to YourBudget!");
@@ -37,11 +42,6 @@ class Function
 
 
         }
-    }
-
-    void generateFile(String fileName)
-    {
-
     }
 
     void removeFile(String fileName)
