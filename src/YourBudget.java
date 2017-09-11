@@ -17,6 +17,9 @@ class Function
 {
 
     File file;
+    double balance, monthlyPayments, weeklyPayments;
+
+
     public Function()
     {
         generateFile("configFile");
@@ -27,7 +30,7 @@ class Function
         try
         {
 
-            file = new File(fileName);
+            file = new File(fileName + ".txt");
             if(file.createNewFile())
             {
                 System.out.println(fileName + " created!");
@@ -64,10 +67,14 @@ class Function
 
     }
 
-    void createFile(String fileName)
+    double getBalance()
     {
+        return balance;
+    }
 
-
+    void readConfig(String fileName)
+    {
+        
     }
 }
 
