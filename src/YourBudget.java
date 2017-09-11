@@ -1,10 +1,13 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 public class YourBudget
 {
 
     public static void main(String[] args)
     {
+        new Function();
         new GUI();
     }
 
@@ -12,9 +15,28 @@ public class YourBudget
 
 class Function
 {
+
+    File file;
     public Function()
     {
+        try
+        {
 
+            file = new File("configFile.txt");
+            if(file.createNewFile())
+            {
+                System.out.println("File created! Welcome to YourBudget!");
+            }
+            else
+            {
+                System.out.println("Config already made!");
+            }
+        }
+        catch(IOException e)
+        {
+
+
+        }
     }
 
     void generateFile(String fileName)
@@ -37,8 +59,14 @@ class Function
 
     }
 
-    void generateReport()
+    void generateReport(String fileName)
     {
+
+    }
+
+    void createFile(String fileName)
+    {
+
 
     }
 }
