@@ -25,6 +25,11 @@ class Function
         generateFile("configFile");
     }
 
+    boolean login(String userName, String password)
+    {
+        return true;
+    }
+
     void generateFile(String fileName)
     {
         try
@@ -49,23 +54,22 @@ class Function
 
     void removeFile(String fileName)
     {
-
+        file = new File(fileName + ".txt");
+        file.delete();
     }
 
     void deposit(double depositedAmount)
     {
-
+        balance = balance + depositedAmount;
     }
 
-    void withdraw(double withdrawedAmount)
+    double withdraw(double withdrawedAmount)
     {
 
+        balance = balance - withdrawedAmount;
+        return balance;
     }
 
-    void generateReport(String fileName)
-    {
-
-    }
 
     double getBalance()
     {
@@ -74,7 +78,7 @@ class Function
 
     void readConfig(String fileName)
     {
-        
+
     }
 }
 
