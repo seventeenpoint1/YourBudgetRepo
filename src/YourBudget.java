@@ -7,7 +7,6 @@ public class YourBudget
 
     public static void main(String[] args)
     {
-        new Function();
         new GUI();
     }
 
@@ -21,8 +20,11 @@ class Function
 
 
     public Function()
+
     {
         generateFile("configFile");
+        generateFile("expenses");
+        generateFile("bills");
     }
 
     boolean login(String userName, String password)
@@ -85,13 +87,19 @@ class Function
 class GUI
 {
     private Boolean exit = false;
+
     public GUI()
     {
+        final Function function = new Function();
         while(exit == false)
         {
+            File config = new File("configFile.txt");
+            File expense = new File("expenses.txt");
+            File bills = new File("bills");
             System.out.println("Close Application? Type 'true'");
             Scanner scan = new Scanner(System.in);
             exit = Boolean.valueOf(scan.next());
+
         }
     }
 
